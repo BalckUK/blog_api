@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
 
 import javax.persistence.EntityExistsException;
 import java.util.Collections;
@@ -58,5 +59,24 @@ public class UserService implements UserDetailsService {
         ).getId();
 
         return new ResponseDto(id);
+    }
+
+    public ResponseDto update(Long id, String nickName) {
+        if(repositoryDsl.exist(id)) throw new NullPointerException("not exist id : " + id);
+
+        if(ObjectUtils.isEmpty( nickName) ) throw new NullPointerException();
+
+        final UserInfo info = repository.findById(id).orElseThrow(NullPointerException::new);
+
+        return new ResponseDto( repository.save(
+                UserInfo.builder()
+                        .id( info.getId() )
+                        .email(info.getEmail())
+                        .password(info.getPassword())
+                        .nickName(nickName)
+                        .isEnable(info.getIsEnable())
+                        .roles(info.getRoles())
+                        .build()
+        ).getId());
     }
 }

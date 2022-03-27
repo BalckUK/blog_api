@@ -3,15 +3,13 @@ package kr.co.aske.blog_api.user.controller;
 import kr.co.aske.blog_api.annotation.LoginUser;
 import kr.co.aske.blog_api.user.domain.UserInfo;
 import kr.co.aske.blog_api.user.dto.request.ReqSaveUserDto;
+import kr.co.aske.blog_api.user.dto.request.ReqUpdateUserDto;
 import kr.co.aske.blog_api.user.dto.response.UserDto;
 import kr.co.aske.blog_api.user.service.UserService;
 import kr.co.aske.blog_api.util.dto.ResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.web.csrf.CsrfToken;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "/api/user")
@@ -44,6 +42,14 @@ public class UserController {
     @GetMapping(value = "/delete")
     public ResponseDto userdelete(long id){
          return service.delete(id);
+    }
+
+    @PutMapping(value = "")
+    public ResponseDto put(
+            ReqUpdateUserDto dto,
+            @LoginUser UserInfo userInfo
+    ){
+        return service.update(userInfo.getId(), dto.getNickName());
     }
 
 }
