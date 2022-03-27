@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/blog_api
+    username: root
+    password: haha5032
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    open-in-view: false
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+#      ddl-auto: update
+      ddl-auto: create
