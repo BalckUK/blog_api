@@ -1,4 +1,4 @@
-package kr.co.aske.blog_api.util.dto.user.domain;
+package kr.co.aske.blog_api.user.domain;
 
 import lombok.AccessLevel;
 import lombok.Builder;

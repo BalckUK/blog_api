@@ -1,4 +1,4 @@
-package kr.co.aske.blog_api.util.dto.user.dto.request;
+package kr.co.aske.blog_api.user.dto.request;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

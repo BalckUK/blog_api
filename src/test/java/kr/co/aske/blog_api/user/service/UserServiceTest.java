@@ -1,6 +1,5 @@
 package kr.co.aske.blog_api.user.service;
 
-import kr.co.aske.blog_api.util.dto.user.service.UserService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

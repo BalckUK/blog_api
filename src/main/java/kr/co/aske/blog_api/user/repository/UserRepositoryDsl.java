@@ -1,7 +1,7 @@
-package kr.co.aske.blog_api.util.dto.user.repository;
+package kr.co.aske.blog_api.user.repository;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
-import kr.co.aske.blog_api.util.dto.user.domain.UserInfo;
+import kr.co.aske.blog_api.user.domain.UserInfo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

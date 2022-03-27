@@ -1,9 +1,9 @@
-package kr.co.aske.blog_api.util.dto.user.service;
+package kr.co.aske.blog_api.user.service;
 
-import kr.co.aske.blog_api.util.dto.user.domain.UserInfo;
-import kr.co.aske.blog_api.util.dto.user.domain.UserRole;
-import kr.co.aske.blog_api.util.dto.user.repository.UserRepository;
-import kr.co.aske.blog_api.util.dto.user.repository.UserRepositoryDsl;
+import kr.co.aske.blog_api.user.domain.UserInfo;
+import kr.co.aske.blog_api.user.domain.UserRole;
+import kr.co.aske.blog_api.user.repository.UserRepository;
+import kr.co.aske.blog_api.user.repository.UserRepositoryDsl;
 import kr.co.aske.blog_api.util.dto.ResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
