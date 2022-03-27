@@ -1,11 +1,8 @@
-package kr.co.aske.blog_api.user.dto.request;
+package kr.co.aske.blog_api.util.dto.user.dto.request;
 
-import kr.co.aske.blog_api.user.domain.UserRole;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.List;
 
 @NoArgsConstructor
 @Getter

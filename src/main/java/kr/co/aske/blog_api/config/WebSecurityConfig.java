@@ -1,6 +1,6 @@
 package kr.co.aske.blog_api.config;
 
-import kr.co.aske.blog_api.user.service.UserService;
+import kr.co.aske.blog_api.util.dto.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;

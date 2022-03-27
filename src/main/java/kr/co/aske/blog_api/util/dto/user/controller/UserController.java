@@ -1,10 +1,10 @@
-package kr.co.aske.blog_api.user.controller;
+package kr.co.aske.blog_api.util.dto.user.controller;
 
 import kr.co.aske.blog_api.annotation.LoginUser;
-import kr.co.aske.blog_api.user.domain.UserInfo;
-import kr.co.aske.blog_api.user.dto.request.ReqSaveUserDto;
-import kr.co.aske.blog_api.user.dto.response.UserDto;
-import kr.co.aske.blog_api.user.service.UserService;
+import kr.co.aske.blog_api.util.dto.user.domain.UserInfo;
+import kr.co.aske.blog_api.util.dto.user.dto.request.ReqSaveUserDto;
+import kr.co.aske.blog_api.util.dto.user.dto.response.UserDto;
+import kr.co.aske.blog_api.util.dto.user.service.UserService;
 import kr.co.aske.blog_api.util.dto.ResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.web.csrf.CsrfToken;
@@ -40,5 +40,10 @@ public class UserController {
         return token;
     }
 
+
+    @GetMapping(value = "/delete")
+    public ResponseDto userdelete(long id){
+         return service.delete(id);
+    }
 
 }

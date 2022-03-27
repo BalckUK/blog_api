@@ -1,10 +1,8 @@
-package kr.co.aske.blog_api.user.dto.response;
+package kr.co.aske.blog_api.util.dto.user.dto.response;
 
-import com.querydsl.core.annotations.QueryProjection;
-import kr.co.aske.blog_api.user.domain.UserInfo;
+import kr.co.aske.blog_api.util.dto.user.domain.UserInfo;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @NoArgsConstructor
 @Getter

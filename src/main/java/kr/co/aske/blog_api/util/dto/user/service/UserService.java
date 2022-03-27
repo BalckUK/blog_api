@@ -1,9 +1,9 @@
-package kr.co.aske.blog_api.user.service;
+package kr.co.aske.blog_api.util.dto.user.service;
 
-import kr.co.aske.blog_api.user.domain.UserInfo;
-import kr.co.aske.blog_api.user.domain.UserRole;
-import kr.co.aske.blog_api.user.repository.UserRepository;
-import kr.co.aske.blog_api.user.repository.UserRepositoryDsl;
+import kr.co.aske.blog_api.util.dto.user.domain.UserInfo;
+import kr.co.aske.blog_api.util.dto.user.domain.UserRole;
+import kr.co.aske.blog_api.util.dto.user.repository.UserRepository;
+import kr.co.aske.blog_api.util.dto.user.repository.UserRepositoryDsl;
 import kr.co.aske.blog_api.util.dto.ResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityExistsException;
 import java.util.Collections;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -27,6 +26,16 @@ public class UserService implements UserDetailsService {
         return repositoryDsl.findByEmail(username)
                 .orElseThrow(NullPointerException::new);
     }
+
+    public ResponseDto delete(long id){
+         repository.delete(
+             UserInfo.builder()
+                     .id(id)
+                     .build()
+        );
+         return new ResponseDto(-1L);
+    }
+
 
     public ResponseDto save(
             String email, String password, String nickName

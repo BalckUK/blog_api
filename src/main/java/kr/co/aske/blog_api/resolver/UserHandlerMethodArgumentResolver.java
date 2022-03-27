@@ -1,7 +1,7 @@
 package kr.co.aske.blog_api.resolver;
 
 import kr.co.aske.blog_api.annotation.LoginUser;
-import kr.co.aske.blog_api.user.domain.UserInfo;
+import kr.co.aske.blog_api.util.dto.user.domain.UserInfo;
 import lombok.NonNull;
 import org.springframework.core.MethodParameter;
 import org.springframework.security.core.Authentication;
